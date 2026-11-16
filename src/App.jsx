@@ -1,4 +1,24 @@
+import { useEffect } from 'react'
+import Lenis from 'lenis'
 import { profile, projects, skills, university } from './data.js'
+
+// Плавная прокрутка колесом и тачпадом; для тех, кто отключил анимации, остаётся обычная
+function useSmoothScroll() {
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const lenis = new Lenis({ lerp: 0.085, anchors: { offset: -24 } })
+    let frame
+    const raf = (time) => {
+      lenis.raf(time)
+      frame = requestAnimationFrame(raf)
+    }
+    frame = requestAnimationFrame(raf)
+    return () => {
+      cancelAnimationFrame(frame)
+      lenis.destroy()
+    }
+  }, [])
+}
 
 function Wordmark() {
   return (
@@ -131,6 +151,7 @@ function Contacts() {
 }
 
 export default function App() {
+  useSmoothScroll()
   return (
     <>
       <Header />
