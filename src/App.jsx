@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useId } from 'react'
 import Lenis from 'lenis'
 import { profile, projects, skills, university } from './data.js'
 
@@ -25,10 +25,31 @@ function useSmoothScroll() {
   }, [])
 }
 
+// Буква «О» в логотипе ANTIDOT: капсула с залитой нижней половиной и плюсом
+function Capsule() {
+  const id = useId()
+  return (
+    <svg className="capsule" viewBox="0 0 20 40" aria-hidden="true">
+      <defs>
+        <clipPath id={id}>
+          <rect x="0" y="20" width="20" height="20" />
+        </clipPath>
+      </defs>
+      <rect x="1.5" y="1.5" width="17" height="37" rx="8.5" fill="none" stroke="currentColor" strokeWidth="3" />
+      <rect x="1.5" y="1.5" width="17" height="37" rx="8.5" fill="currentColor" clipPath={`url(#${id})`} />
+      <rect className="plus" x="8" y="14" width="4" height="12" rx="0.8" />
+      <rect className="plus" x="4" y="18" width="12" height="4" rx="0.8" />
+    </svg>
+  )
+}
+
 function Wordmark() {
   return (
     <a className="wordmark" href="#top" aria-label="ANTIDOT">
-      ANTI<span>DOT</span>
+      ANTI
+      <span>
+        D<Capsule />T
+      </span>
     </a>
   )
 }
@@ -216,7 +237,10 @@ export default function App() {
         </Section>
       </main>
       <div className="big-mark" aria-hidden="true">
-        ANTI<span>DOT</span>
+        ANTI
+        <span>
+          D<Capsule />T
+        </span>
       </div>
       <footer className="footer wrap">
         <span>Максим Круглов, 2026</span>

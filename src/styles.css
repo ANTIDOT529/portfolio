@@ -72,6 +72,19 @@ a {
 .wordmark span {
   color: var(--accent);
 }
+.capsule {
+  display: inline-block;
+  height: 1.05em;
+  width: 0.53em;
+  margin: 0 0.04em;
+  vertical-align: -0.14em;
+}
+.capsule .plus {
+  fill: #fff;
+}
+.big-mark .capsule .plus {
+  fill: var(--bg);
+}
 .nav-links {
   display: flex;
   gap: 28px;
