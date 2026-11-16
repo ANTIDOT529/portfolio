@@ -111,16 +111,22 @@ function Contacts() {
   ].filter(Boolean)
   if (items.length === 0) return <p className="muted">Контакты скоро появятся здесь.</p>
   return (
-    <ul className="contacts">
-      {items.map((i) => (
-        <li key={i.label}>
-          <span>{i.label}</span>
-          <a href={i.href} target="_blank" rel="noreferrer">
-            {i.text}
-          </a>
-        </li>
-      ))}
-    </ul>
+    <div className="contact-panel">
+      <div className="contact-intro">
+        <p className="contact-lead">Буду рад знакомству и разговору о работе.</p>
+        <p className="muted">Напишите в удобном для вас месте.</p>
+      </div>
+      <ul className="contacts">
+        {items.map((i) => (
+          <li key={i.label}>
+            <span>{i.label}</span>
+            <a href={i.href} target="_blank" rel="noreferrer">
+              {i.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
@@ -147,6 +153,7 @@ export default function App() {
           </div>
         </Section>
 
+        <div className="duo">
         <Section id="skills" title="Навыки">
           <h3 className="skills-label">Изучаю</h3>
           <ul className="skills">
@@ -162,7 +169,7 @@ export default function App() {
           </ul>
         </Section>
 
-        <Section id="university" title="Чему учусь в университете">
+        <Section id="university" title="Университет">
           <h3 className="skills-label">Языки</h3>
           <ul className="skills">
             {university.languages.map((t) => (
@@ -176,11 +183,15 @@ export default function App() {
             ))}
           </ul>
         </Section>
+        </div>
 
         <Section id="contacts" title="Контакты">
           <Contacts />
         </Section>
       </main>
+      <div className="big-mark" aria-hidden="true">
+        ANTI<span>DOT</span>
+      </div>
       <footer className="footer wrap">
         <span>Максим Круглов, 2026</span>
       </footer>

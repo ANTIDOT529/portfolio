@@ -287,12 +287,38 @@ details li {
   font-size: 16px;
 }
 
+/* навыки и университет рядом */
+.duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 72px;
+}
+
 /* контакты */
+.contact-panel {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 48px;
+  align-items: center;
+  padding: 48px;
+  border-radius: 24px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+.contact-lead {
+  margin: 0 0 12px;
+  font-family: var(--head);
+  font-weight: 600;
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.25;
+}
+.contact-intro .muted {
+  margin: 0;
+}
 .contacts {
   margin: 0;
   padding: 0;
   list-style: none;
-  max-width: 560px;
 }
 .contacts li {
   display: flex;
@@ -318,6 +344,24 @@ details li {
 }
 .contacts a:hover {
   color: var(--accent);
+}
+
+/* большая подпись студии над подвалом */
+.big-mark {
+  margin-top: 40px;
+  overflow: hidden;
+  text-align: center;
+  font-family: var(--head);
+  font-weight: 700;
+  font-size: clamp(56px, 17vw, 240px);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  color: #171a23;
+  user-select: none;
+}
+.big-mark span {
+  color: rgba(255, 95, 162, 0.16);
 }
 
 .footer {
@@ -355,6 +399,14 @@ details li {
   .stage {
     order: -1;
     min-height: 0;
+  }
+  .duo {
+    grid-template-columns: 1fr;
+  }
+  .contact-panel {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 28px;
   }
 }
 @media (max-width: 560px) {
