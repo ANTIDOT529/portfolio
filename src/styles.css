@@ -83,7 +83,7 @@ a {
   fill: #fff;
 }
 .big-mark .capsule .plus {
-  fill: var(--bg);
+  fill: #7a343c;
 }
 .nav-links {
   display: flex;
@@ -384,7 +384,7 @@ details li {
   user-select: none;
 }
 .big-mark span {
-  color: rgba(255, 77, 79, 0.2);
+  color: #3f1d22; /* то же красное, но сплошным цветом, без наложения прозрачности */
 }
 
 .footer {
