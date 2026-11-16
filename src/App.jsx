@@ -6,7 +6,12 @@ import { profile, projects, skills, university } from './data.js'
 function useSmoothScroll() {
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    const lenis = new Lenis({ lerp: 0.085, anchors: { offset: -24 } })
+    const lenis = new Lenis({
+      duration: 1.4,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      wheelMultiplier: 0.9,
+      anchors: { offset: -24 },
+    })
     let frame
     const raf = (time) => {
       lenis.raf(time)
@@ -112,7 +117,7 @@ function Project({ p, n }) {
       </div>
       <div className="stage" style={{ background: p.tint }}>
         {p.images.length > 0 ? (
-          p.images.map((src) => <img key={src} src={src} alt={'Скриншот: ' + p.title} loading="lazy" />)
+          p.images.map((src) => <img key={src} src={src} alt={'Скриншот: ' + p.title} width="640" height="1138" loading="lazy" decoding="async" />)
         ) : (
           <span className="stage-title">{p.title}</span>
         )}

@@ -33,7 +33,7 @@ export const projects = [
       'Написал движок и отдельный симулятор для хардкор-режима, чтобы подбирать баланс цифрами, а не на глаз.',
       'Подключил локальные напоминания, аналитику событий и рекламу, прошёл модерацию RuStore.',
     ],
-    images: ['img/blobbi-1.png', 'img/blobbi-2.png', 'img/blobbi-3.png'],
+    images: ['img/blobbi-1.webp', 'img/blobbi-2.webp', 'img/blobbi-3.webp'],
     links: {
       store: 'https://www.rustore.ru/catalog/app/com.blobbi.game',
       storeLabel: 'Скачать в RuStore',
@@ -55,7 +55,7 @@ export const projects = [
       'Сделал два режима сборки: боевой с настоящей рекламой и аналитикой и тестовый на демо-блоках, ключи в репозиторий не попадают.',
       'Опубликовал политику конфиденциальности на GitHub Pages для требований магазинов.',
     ],
-    images: ['img/yard-1.png', 'img/yard-2.png', 'img/yard-3.png'],
+    images: ['img/yard-1.webp', 'img/yard-2.webp', 'img/yard-3.webp'],
     links: { store: null, source: null },
   },
   {
