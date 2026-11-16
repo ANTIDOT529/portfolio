@@ -251,6 +251,9 @@ details li {
 .project-links a {
   color: var(--accent);
 }
+.project-links .soon {
+  color: var(--muted);
+}
 
 /* навыки */
 .skills {

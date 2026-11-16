@@ -74,13 +74,14 @@ function Project({ p, n }) {
             ))}
           </ul>
         </details>
-        {(p.links.store || p.links.source) && (
+        {(p.links.store || p.links.source || p.links.soon) && (
           <p className="project-links">
             {p.links.store && (
               <a href={p.links.store} target="_blank" rel="noreferrer">
-                Страница в магазине
+                {p.links.storeLabel || 'Страница в магазине'}
               </a>
             )}
+            {p.links.soon && <span className="soon">{p.links.soon}</span>}
             {p.links.source && (
               <a href={p.links.source} target="_blank" rel="noreferrer">
                 Исходный код
